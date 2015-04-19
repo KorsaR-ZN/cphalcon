@@ -19,6 +19,15 @@
 - Closures used as handlers in` Mvc\Micro` are now bound to the $app instance
 - Routes now can have an associated callback that can override the default dispatcher + view behavior
 - Phalcon\Mvc\Model now implements JsonSerializable making easy serialize model instances
+- Phalcon\Session\Adapter
+   - Added public method (with support PHP 5.4):
+      - `getOption()`, `getCookieParams()`, `setCookieParams()`, `setName()`, `getName()`,
+      - `regenerateId()`, `reset()`, `commit()`, `abort()`, `clear()`, `status()`, `encode()`, `decode()`
+   - Added protected method:
+      - `configure()`, `legacySessionReset()`, `legacySessionAbort()`, `legacySessionStatus()`
+   - Added options:
+      - name, cookie_lifetime, cookie_path, cookie_domain, cookie_secure, cookie_httponly
+   - `Phalcon\Session\Adapter\Files` added options: savePath
 
 # [2.0.8](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.8) (2015-XX-XX)
 - Added `Phalcon\Security\Random::base58` - to generate a random base58 string
