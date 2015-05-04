@@ -160,11 +160,15 @@ class Model implements AdapterInterface
 				}
 
 				let pageItems[] = items->current();
+				items->next();
+
 				if i >= show {
 					break;
 				}
 				let i++;
 			}
+
+			items->rewind();
 		}
 
 		//Fix next
