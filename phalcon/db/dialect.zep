@@ -419,6 +419,14 @@ abstract class Dialect implements DialectInterface
 			let sql = this->getSqlExpressionLimit(["sql": sql, "value": limit]);
 		}
 
+		if isset definition["for_update"] && definition["for_update"] {
+			let sql = this->forUpdate(sql);
+		}
+
+		if isset definition["shared_lock"] && definition["shared_lock"] {
+			let sql = this->sharedLock(sql);
+		}
+
 		return sql;
 	}
 
