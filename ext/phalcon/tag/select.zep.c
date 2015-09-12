@@ -151,7 +151,7 @@ PHP_METHOD(Phalcon_Tag_Select, selectField) {
 		ZEPHIR_GET_CONSTANT(_6, "PHP_EOL");
 		ZEPHIR_INIT_LNVAR(_7);
 		ZEPHIR_CONCAT_SV(_7, "</option>", _6);
-		ZEPHIR_CALL_SELF(&_8, "_optionsfromresultset", &_9, 420, options, using, value, _7);
+		ZEPHIR_CALL_SELF(&_8, "_optionsfromresultset", &_9, 414, options, using, value, _7);
 		zephir_check_call_status();
 		zephir_concat_self(&code, _8 TSRMLS_CC);
 	} else {
@@ -160,7 +160,7 @@ PHP_METHOD(Phalcon_Tag_Select, selectField) {
 			ZEPHIR_GET_CONSTANT(_6, "PHP_EOL");
 			ZEPHIR_INIT_LNVAR(_7);
 			ZEPHIR_CONCAT_SV(_7, "</option>", _6);
-			ZEPHIR_CALL_SELF(&_8, "_optionsfromarray", &_10, 421, options, value, _7);
+			ZEPHIR_CALL_SELF(&_8, "_optionsfromarray", &_10, 415, options, value, _7);
 			zephir_check_call_status();
 			zephir_concat_self(&code, _8 TSRMLS_CC);
 		} else {
@@ -208,7 +208,7 @@ PHP_METHOD(Phalcon_Tag_Select, _optionsFromResultset) {
 		ZEPHIR_OBS_VAR(usingOne);
 		zephir_array_fetch_long(&usingOne, using, 1, PH_NOISY, "phalcon/tag/select.zep", 168 TSRMLS_CC);
 	}
-	ZEPHIR_CALL_CE_STATIC(&_0, phalcon_tag_ce, "getescaperservice", &_1, 422);
+	ZEPHIR_CALL_CE_STATIC(&_0, phalcon_tag_ce, "getescaperservice", &_1, 416);
 	zephir_check_call_status();
 	ZEPHIR_CPY_WRT(escaper, _0);
 	_2 = zephir_get_iterator(resultset TSRMLS_CC);
@@ -323,12 +323,12 @@ PHP_METHOD(Phalcon_Tag_Select, _optionsFromArray) {
 	) {
 		ZEPHIR_GET_HMKEY(optionValue, _1, _0);
 		ZEPHIR_GET_HVALUE(optionText, _2);
-		ZEPHIR_CALL_FUNCTION(&escaped, "htmlspecialchars", &_3, 181, optionValue);
+		ZEPHIR_CALL_FUNCTION(&escaped, "htmlspecialchars", &_3, 175, optionValue);
 		zephir_check_call_status();
 		if (Z_TYPE_P(optionText) == IS_ARRAY) {
 			ZEPHIR_INIT_NVAR(_4);
 			ZEPHIR_GET_CONSTANT(_4, "PHP_EOL");
-			ZEPHIR_CALL_SELF(&_5, "_optionsfromarray", &_6, 421, optionText, value, closeOption);
+			ZEPHIR_CALL_SELF(&_5, "_optionsfromarray", &_6, 415, optionText, value, closeOption);
 			zephir_check_call_status();
 			ZEPHIR_INIT_NVAR(_7);
 			ZEPHIR_GET_CONSTANT(_7, "PHP_EOL");
